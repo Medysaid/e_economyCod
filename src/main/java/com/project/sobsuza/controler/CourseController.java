@@ -28,7 +28,7 @@ public class CourseController {
         return ResponseEntity.ok().body(courseService.getById(id));
     }
     @PutMapping("/{id}")
-    public ResponseEntity edt(int id,CourseRequestDto courseRequestDto){
+    public ResponseEntity edit(int id,CourseRequestDto courseRequestDto){
         return ResponseEntity.ok().body(courseService.edit(id,courseRequestDto));
     }
     @DeleteMapping("/{id}")
