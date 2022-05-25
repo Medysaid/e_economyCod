@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.*;
 
 public class SupervisorController {
   @Autowired
-    public SupervisorService supervisorService;
+  private final SupervisorService supervisorService;
   @PostMapping ("/")
-  public ResponseEntity post(SupervisorRequestDto supervisorRequestDto){
+  public ResponseEntity post(@RequestBody SupervisorRequestDto supervisorRequestDto){
     return ResponseEntity.ok().body(supervisorService.add(supervisorRequestDto));
   }
   @GetMapping("/")

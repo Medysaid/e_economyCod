@@ -16,7 +16,7 @@ public class CourseController {
     private final CourseService courseService;
 
     @PostMapping("/")
-    public ResponseEntity post(CourseRequestDto courseRequestDto){
+    public ResponseEntity post(@RequestBody CourseRequestDto courseRequestDto){
         return ResponseEntity.ok().body(courseService.add(courseRequestDto));
     }
     @GetMapping("/")
