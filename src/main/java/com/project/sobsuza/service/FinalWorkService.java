@@ -13,6 +13,7 @@ import org.springframework.web.server.ResponseStatusException;
 import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Data
@@ -26,7 +27,7 @@ public class FinalWorkService {
         return Boolean.TRUE;
     }
 
-    public List get(Id){
+    public List get(){
         List list=new ArrayList<>();
         FinalWorkResponseDto finalWorkResponseDto=null;
         for (FinalWork finalWork:finalWorkRepository.findAll()){
@@ -34,6 +35,30 @@ public class FinalWorkService {
          list.add(finalWorkResponseDto);
         }
         return list;
+    }
+
+    public FinalWorkResponseDto geById(int Id){
+        Optional<FinalWork> getById=finalWorkRepository.findById(Id);
+        if (!getById.isPresent()){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"not found");
+        }
+        FinalWorkResponseDto finalWorkResponseDto=modelMapper.map(getById.get(),FinalWorkResponseDto.class);
+        return finalWorkResponseDto;
+    }
+    public Boolean edit(int Id,FinalWorkRequestDto finalWorkRequestDto){
+        FinalWork finalWork=modelMapper.map(finalWorkRequestDto,FinalWork.class);
+        finalWork.setFinalWorkId(Id);
+        finalWorkRepository.save(finalWork);
+        return Boolean.TRUE;
+    }
+
+    public Boolean deleteById(int Id){
+        Optional<FinalWork> getById=finalWorkRepository.findById(Id);
+        if (!getById.isPresent()){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"not found");
+        }
+        finalWorkRepository.deleteById(Id);
+        return Boolean.TRUE;
     }
 
 

@@ -34,6 +34,7 @@ public class DocumentController {
     }
     @DeleteMapping("/{Id}")
     public ResponseEntity delete(int Id){
+
         return ResponseEntity.ok().body(documentService.getByDelete(Id));
     }
 }
