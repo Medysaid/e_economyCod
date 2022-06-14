@@ -8,11 +8,11 @@ import javax.persistence.Table;
 @Entity
 @Table
 @Data
-public class Student {
-    private @Id String regNumber;
+public class Users {
+    private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) int userId;
     private String fullName;
-    private String level;
+    private String userName;
+    private String password;
     private String email;
-    private int courseId;
-
+    private int role;
 }

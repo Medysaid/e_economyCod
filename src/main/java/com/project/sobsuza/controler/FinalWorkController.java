@@ -18,7 +18,7 @@ public class FinalWorkController {
     private final FinalWorkService finalWorkService;
 
     @PostMapping("/")
-    public ResponseEntity post(@RequestBody FinalWorkRequestDto finalWorkRequestDto){
+    public ResponseEntity post(@RequestBody FinalWorkRequestDto finalWorkRequestDto) throws Exception{
         return ResponseEntity.ok().body(finalWorkService.add(finalWorkRequestDto));
     }
 
@@ -28,17 +28,17 @@ public class FinalWorkController {
     }
 
     @GetMapping("/{Id}")
-    public ResponseEntity getById(int Id){
+    public ResponseEntity getById(@PathVariable("id") int Id){
         return ResponseEntity.ok().body(finalWorkService.geById(Id));
     }
 
     @PutMapping("/{Id}")
-    public ResponseEntity edit(int Id,FinalWorkRequestDto finalWorkRequestDto){
+    public ResponseEntity edit(@PathVariable("id") int Id,FinalWorkRequestDto finalWorkRequestDto){
         return ResponseEntity.ok().body(finalWorkService.edit(Id,finalWorkRequestDto));
     }
 
     @DeleteMapping("/{Id}")
-    public ResponseEntity delete(int Id){
+    public ResponseEntity delete(@PathVariable("id") int Id){
         return ResponseEntity.ok().body(finalWorkService.deleteById(Id));
     }
 

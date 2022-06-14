@@ -24,15 +24,15 @@ public class SupervisorController {
     return ResponseEntity.ok().body(supervisorService.get());
   }
   @GetMapping("/{Id}")
-  public ResponseEntity getById(int Id){
+  public ResponseEntity getById(@PathVariable("id") int Id){
     return ResponseEntity.ok().body(supervisorService.getById(Id));
   }
   @PutMapping("/{Id}")
-  public ResponseEntity edit(int Id,SupervisorRequestDto supervisorRequestDto){
+  public ResponseEntity edit(@PathVariable("id") int Id,SupervisorRequestDto supervisorRequestDto){
     return ResponseEntity.ok().body(supervisorService.edit(Id,supervisorRequestDto));
   }
   @DeleteMapping("/{Id}")
-  public ResponseEntity delete(int Id){
+  public ResponseEntity delete(@PathVariable("id") int Id){
     return ResponseEntity.ok().body(supervisorService.getByDelete(Id));
   }
 

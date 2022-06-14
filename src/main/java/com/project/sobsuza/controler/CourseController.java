@@ -24,15 +24,15 @@ public class CourseController {
         return ResponseEntity.ok().body(courseService.get());
     }
     @GetMapping("/{id}")
-    public ResponseEntity getById(int id){
+    public ResponseEntity getById(@PathVariable("id") int id){
         return ResponseEntity.ok().body(courseService.getById(id));
     }
     @PutMapping("/{id}")
-    public ResponseEntity edit(int id,CourseRequestDto courseRequestDto){
+    public ResponseEntity edit(@PathVariable("id") int id,CourseRequestDto courseRequestDto){
         return ResponseEntity.ok().body(courseService.edit(id,courseRequestDto));
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity delete(int id){
+    public ResponseEntity delete(@PathVariable("id") int id){
         return ResponseEntity.ok().body(courseService.getByDelete(id));
     }
 

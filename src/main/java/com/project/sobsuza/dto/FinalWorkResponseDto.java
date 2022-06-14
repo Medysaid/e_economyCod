@@ -11,6 +11,8 @@ import java.time.LocalDate;
 public class FinalWorkResponseDto {
     private int finalWorkId;
     private String regNumber;
+    private String topic;
+    private String description;
     private int documentId;
     private int supervisorId;
     private String docType;

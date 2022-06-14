@@ -12,6 +12,7 @@ public class Document {
     private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) int documentId;
     private String documentType;
     private String documentName;
+    private String regNumber;
     private LocalDate uploadedDate;
 
 }

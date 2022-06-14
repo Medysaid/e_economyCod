@@ -24,15 +24,15 @@ public class StudentController {
         return ResponseEntity.ok().body(studentService.get());
     }
     @GetMapping("/{Id}")
-    public ResponseEntity getById(String Id){
+    public ResponseEntity getById(@PathVariable("id") String Id){
         return ResponseEntity.ok().body(studentService.getById(Id));
     }
     @PutMapping("/{Id}")
-    public ResponseEntity edit(String Id,StudentRequestDto studentRequestDto){
+    public ResponseEntity edit(@PathVariable("id") String Id,StudentRequestDto studentRequestDto){
         return ResponseEntity.ok().body(studentService.edit(Id,studentRequestDto));
     }
     @DeleteMapping("/{Id}")
-    public ResponseEntity delete(String Id){
+    public ResponseEntity delete(@PathVariable("id") String Id){
         return ResponseEntity.ok().body(studentService.getByDelete(Id));
     }
 

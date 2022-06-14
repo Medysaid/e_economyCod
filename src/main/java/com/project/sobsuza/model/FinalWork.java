@@ -14,8 +14,10 @@ import java.time.LocalDate;
 public class FinalWork {
     private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) int finalWorkId;
     private String regNumber;
-    private int documentId;
-    private int supervisorId;
+    private String topic;
     private String docType;
+    private String description;
+    private int supervisorId;
+    private int documentId;
     private LocalDate submittedDate;
 }
