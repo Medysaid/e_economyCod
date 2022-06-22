@@ -24,15 +24,15 @@ public class DocumentController {
         return ResponseEntity.ok().body(documentService.get());
     }
 
-    @GetMapping("/{Id}")
+    @GetMapping("/{id}")
     public ResponseEntity getById(@PathVariable("id") int Id){
         return ResponseEntity.ok().body(documentService.getById(Id));
     }
-    @PutMapping("/{Id}")
+    @PutMapping("/{id}")
     public ResponseEntity edit(@PathVariable("id") int Id,DocumentRequestDto documentRequestDto){
         return ResponseEntity.ok().body(documentService.edit(Id,documentRequestDto));
     }
-    @DeleteMapping("/{Id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable("id") int Id){
 
         return ResponseEntity.ok().body(documentService.getByDelete(Id));

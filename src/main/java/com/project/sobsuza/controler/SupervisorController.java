@@ -23,15 +23,16 @@ public class SupervisorController {
   public ResponseEntity get(){
     return ResponseEntity.ok().body(supervisorService.get());
   }
-  @GetMapping("/{Id}")
+  //hizi id zinafa zifanae mpaka herufi
+  @GetMapping("/{id}")
   public ResponseEntity getById(@PathVariable("id") int Id){
     return ResponseEntity.ok().body(supervisorService.getById(Id));
   }
-  @PutMapping("/{Id}")
+  @PutMapping("/{id}")
   public ResponseEntity edit(@PathVariable("id") int Id,SupervisorRequestDto supervisorRequestDto){
     return ResponseEntity.ok().body(supervisorService.edit(Id,supervisorRequestDto));
   }
-  @DeleteMapping("/{Id}")
+  @DeleteMapping("/{id}")
   public ResponseEntity delete(@PathVariable("id") int Id){
     return ResponseEntity.ok().body(supervisorService.getByDelete(Id));
   }

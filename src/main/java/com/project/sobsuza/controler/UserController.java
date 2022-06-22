@@ -27,19 +27,19 @@ public class UserController {
         return ResponseEntity.ok().body(userService.get());
     }
 
-    @GetMapping("/{Id}")
-    public ResponseEntity getById(int Id){
+    @GetMapping("/{id}")
+    public ResponseEntity getById(@PathVariable("id") int Id){
 
         return ResponseEntity.ok().body(userService.getById(Id));
     }
 
-    @PutMapping("{Id}")
-    public ResponseEntity edit(int Id, UserRequestDto userRequestDto){
+    @PutMapping("{id}")
+    public ResponseEntity edit(@PathVariable("id") int Id, UserRequestDto userRequestDto){
         return ResponseEntity.ok().body(userService.edit(Id,userRequestDto));
     }
 
-    @DeleteMapping("/{Id}")
-    public ResponseEntity delete(int Id){
+    @DeleteMapping("/{id}")
+    public ResponseEntity delete(@PathVariable("id") int Id){
         return ResponseEntity.ok().body(userService.deleteById(Id));
     }
 }

@@ -27,17 +27,17 @@ public class FinalWorkController {
         return ResponseEntity.ok().body(finalWorkService.get());
     }
 
-    @GetMapping("/{Id}")
+    @GetMapping("/{id}")
     public ResponseEntity getById(@PathVariable("id") int Id){
         return ResponseEntity.ok().body(finalWorkService.geById(Id));
     }
 
-    @PutMapping("/{Id}")
+    @PutMapping("/{id}")
     public ResponseEntity edit(@PathVariable("id") int Id,FinalWorkRequestDto finalWorkRequestDto){
         return ResponseEntity.ok().body(finalWorkService.edit(Id,finalWorkRequestDto));
     }
 
-    @DeleteMapping("/{Id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable("id") int Id){
         return ResponseEntity.ok().body(finalWorkService.deleteById(Id));
     }
